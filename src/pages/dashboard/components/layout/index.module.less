@@ -1,0 +1,69 @@
+.page {
+  // height: calc(100% - var(--window-title-bar-height));
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 210px;
+    height: 100%;
+    background-color: #1b1f29;
+    user-select: none;
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      background-size: cover;
+      margin-top: 60px;
+    }
+
+    .logoImg {
+      width: 100%;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+  }
+
+  .content {
+    height: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+}
+
+.openBtn {
+  position: relative;
+  bottom: 30px;
+  width: 120px;
+  height: 40px;
+  border: 1px solid #323b4d;
+  text-align: center;
+  line-height: 40px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+
+  .openFolderIcon {
+    font-size: 16px;
+    margin-right: 8px;
+  }
+
+  &:hover {
+    border: 1px solid #ffffff6b;
+    background: #323b4d85;
+    color: #fff;
+  }
+
+  &:active {
+    background: none;
+  }
+}

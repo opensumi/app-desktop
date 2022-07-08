@@ -1,0 +1,23 @@
+{
+  "name": "app-desktop",
+  "version": "{{auto-fill-version}}",
+  "main": "bootstrap/main.js",
+  "description": "{{auto-fill-description}}",
+  "scripts": {
+    "postinstall": "npm run rebuild-native",
+    "rebuild-native": "cross-env NATIVE_MODULE_PATH='../app' ts-node ../scripts/rebuild-native.ts --target=electron --force-rebuild=true"
+  },
+  "resolutions": {
+    "got": "8.3.1",
+    "@opensumi/vscode-ripgrep": "1.4.0"
+  },
+  "dependencies": {
+    "node-pty": "0.10.1",
+    "spdlog": "0.11.1",
+    "@opensumi/vscode-ripgrep": "1.4.0",
+    "vscode-oniguruma": "1.5.1",
+    "keytar": "^7.7.0",
+    "better-sqlite3": "^7.5.0",
+    "nsfw": "2.1.2"
+  }
+}

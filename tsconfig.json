@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2019",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "baseUrl": "src",
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "declaration": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": false,
+    "resolveJsonModule": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "downlevelIteration": true,
+    "noEmitOnError": false,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "useUnknownInCatchVariables": false,
+    "isolatedModules": true,
+    "outDir": "app/dist",
+    "lib": [
+      "dom",
+      "esnext",
+      "es2019"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/base/common/typings",
+      "./src/base/browser/typings",
+      "./src/editor/browser/typings"
+    ],
+  },
+  "include": [
+    "src/bootstrap/**/*",
+    "src/base/**/*",
+    "src/pages/**/*",
+    "src/editor/**/*",
+    "scripts/**/*",
+    "configs/**/*"
+  ]
+}

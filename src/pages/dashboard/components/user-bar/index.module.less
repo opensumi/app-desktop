@@ -1,0 +1,49 @@
+.workspace_user {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  height: 80px;
+  -webkit-app-region: drag;
+  user-select: none;
+
+  .user_info {
+    margin-left: 13px;
+
+    .user_nick_wrap {
+      display: flex;
+      align-items: center;
+    }
+
+    .user_nick {
+      font-size: 20px;
+      color: #fff;
+      font-weight: 600;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .user_dep {
+      margin-top: 5px;
+      margin-bottom: 0;
+      font-size: 14px;
+      color: #909399;
+      line-height: 1;
+      -webkit-app-region: no-drag;
+    }
+
+    .user_log_out {
+      cursor: pointer;
+      font-size: 12px;
+      margin-left: 5px;
+    }
+
+    .user_login {
+      cursor: pointer;
+      color: rgba(255, 80, 0, 0.6);
+
+      &:hover {
+        color: #ff5000;
+      }
+    }
+  }
+}

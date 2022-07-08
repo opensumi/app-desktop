@@ -1,0 +1,4 @@
+src/editor/browser/vendor/loader.js
+src/editor/vendor/loader.js
+src/editor/modules/tracker/browser/sls.js
+src/editor/node_modules

@@ -1,0 +1,26 @@
+export const iconStyleSheets = [
+  {
+    iconMap: {
+      gengduo: 'gengduo',
+      tiaoshiqi: 'tiaoshiqi',
+      kuawenjiansousuo: 'kuawenjiansousuo',
+      fabu: 'fabu',
+      yulan: 'yulan',
+      h: 'h',
+      yuandaimaguanli: 'yuandaimaguanli',
+      ziyuanguanliqi: 'ziyuanguanliqi',
+      kuozhanshichang: 'kuozhanshichang',
+      yingyongxiangqing: 'yingyongxiangqing',
+      iconloading: 'iconloading',
+      iconsync: 'iconsync',
+      windows_quit: 'close1',
+      windows_mini: 'min',
+      windows_fullscreen: 'max',
+      windows_recover: 'recover',
+      right_arrow: 'youjiantou1',
+      left_arrow: 'zuojiantou_huaban',
+    },
+    prefix: 'iconfont icon',
+    cssPath: 'https://at.alicdn.com/t/font_1603324_u9j6etc4gfn.css',
+  },
+];

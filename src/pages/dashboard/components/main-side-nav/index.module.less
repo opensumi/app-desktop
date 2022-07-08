@@ -1,0 +1,22 @@
+.nav {
+  flex: 1;
+
+  &:global(.ant-menu) {
+    background: inherit !important;
+    margin-top: 100px;
+  }
+
+  :global(li.ant-menu-item) {
+    box-sizing: border-box;
+    padding-left: 48px !important;
+    font-size: 16px;
+
+    a.link {
+      text-decoration: none;
+    }
+  }
+
+  :global(.ant-menu-item-selected) {
+    background-color: #ff5000 !important;
+  }
+}
