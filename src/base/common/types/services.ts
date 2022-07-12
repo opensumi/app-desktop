@@ -167,3 +167,11 @@ export interface IMenuService {
   updateMenu: () => void;
 }
 export type Platform = 'win32' | 'darwin';
+
+export const IShellService = 'IShellService';
+export interface IShellService {
+  openItem: (path: string) => Promise<string>;
+  openExternal: (uri: string) => Promise<void>;
+  revealInFinder: (path: string) => Promise<void>;
+  revealInSystemTerminal: (path: string) => Promise<void>;
+}

@@ -4,11 +4,9 @@ import type { WindowProps } from './types/app';
 import { IMainApp } from './types/app';
 import {
   IWindowService,
-  IShellService,
   IDialogService,
   IMetaService,
   IMenuService,
-  ISessionService,
 } from './types/services';
 
 export const APP_NAME = 'app-desktop';
@@ -161,12 +159,10 @@ export const defaultPreferences = {
 // 支持 ipc 远程调用的列表
 export const mainApiList = [
   IWindowService,
-  IShellService,
   IDialogService,
   IMetaService,
   IMenuService,
   IMainApp,
-  ISessionService,
   IMainStorageService,
   IRecentService,
 ];
