@@ -3,6 +3,7 @@ import { IMainStorageService, IRecentService } from 'editor/common/types';
 import type { WindowProps } from './types/app';
 import { IMainApp } from './types/app';
 import {
+  IShellService,
   IWindowService,
   IDialogService,
   IMetaService,
@@ -165,6 +166,7 @@ export const mainApiList = [
   IMainApp,
   IMainStorageService,
   IRecentService,
+  IShellService,
 ];
 
 export const RESOURCE_MANIFEST_VERSION = 1;
