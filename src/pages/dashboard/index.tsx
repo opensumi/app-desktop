@@ -9,7 +9,7 @@ import { HomePage } from './views/home';
 import './app.less';
 
 pageRender(
-  <Dialog title="应用管理" titleHidden>
+  <Dialog title="Dashboard" titleHidden>
     <Router>
       <Switch>
         <Route path="/home" exact component={HomePage} />

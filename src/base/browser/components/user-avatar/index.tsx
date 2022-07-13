@@ -3,7 +3,7 @@ import React from 'react';
 
 import styles from './index.module.less';
 
-const defaultAvatarUrl = 'https://gravatar.com/avatar/4a4ed8e8f201d57b5f179446d8e429ab?s=400&d=robohash&r=x';
+const defaultAvatarUrl = 'https://img.alicdn.com/imgextra/i2/O1CN01hqONs81e0ZNcEsXn8_!!6000000003809-2-tps-400-400.png';
 
 interface IUserAvatar {
   onClick: () => void;
