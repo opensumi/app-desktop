@@ -1,20 +1,24 @@
-const { productName } = require('../product.json');
 const useNpmMirror = Boolean(process.env.USE_NPM_MIRROR);
 
-const fs = require('fs');
+const fse = require('fs-extra');
 const path = require('path');
 const electronBuilder = require('electron-builder');
-const rootPackage = require('../package.json');
 const rimraf = require('rimraf');
+
 const DEFAULT_TARGET_PLATFORM = process.platform;
 // x64 arm64 全部值见 {electronBuilder.Arch}
 const TARGET_ARCH = process.env.TARGET_ARCHES || 'x64';
+const rootPackage = require('../package.json');
+
+const rootPath = path.join(__dirname, '..');
 
 // disable code sign
 process.env.CSC_IDENTITY_AUTO_DISCOVERY = false;
 
 // use double package.json structure, auto handle node_modules
-fs.copyFileSync(path.join(__dirname, '../build/package.json'), path.join(__dirname, '../app/package.json'));
+const buildPackageJson = fse.readJSONSync(path.join(rootPath, 'build/package.json'));
+buildPackageJson.version = rootPackage.devDependencies.electron;
+fse.writeJSONSync(path.join(rootPath, 'app/package.json'), buildPackageJson);
 
 const targetPlatforms = (process.env.TARGET_PLATFORMS || DEFAULT_TARGET_PLATFORM).split(',').map((str) => str.trim());
 const targetArches = TARGET_ARCH.split(',').map((str) => str.trim());
@@ -30,14 +34,14 @@ if (targetPlatforms.includes('darwin')) {
   targets.set(electronBuilder.Platform.MAC, archMap);
 }
 
-const outputPath = path.join(__dirname, `../out-${TARGET_ARCH}`);
+const outputPath = path.join(__dirname, `../out/${DEFAULT_TARGET_PLATFORM}-${TARGET_ARCH}`);
 rimraf.sync(outputPath);
 
 electronBuilder.build({
   publish: null,
   targets: targets.size ? targets : undefined,
   config: {
-    productName,
+    productName: 'App-Desktop',
     npmArgs: useNpmMirror ? ['--registry=https://registry.npmmirror.com'] : [],
     electronVersion: rootPackage.devDependencies.electron,
     extraResources: [

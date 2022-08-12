@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider as StoreProvider } from 'react-redux';
-import { Injector } from '@opensumi/di';
 import { AppProvider, setBaseInjector } from 'base/browser/AppContext';
 import { bootstrap } from 'base/browser/bootstrap';
 
