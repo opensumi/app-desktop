@@ -1,0 +1,153 @@
+
+.topTabItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+
+  .tabBtn {
+    width: 42px;
+    height: 22px;
+    color: var(--kt-toolbarButton-foreground);
+    line-height: 22px;
+    font-size: 14px;
+    background-color: var(--kt-toolbarButton-background);
+    border-radius: 3px;
+    flex-shrink: 0;
+    text-align: center;
+    cursor: pointer;
+
+    .maskIcon {
+      background: var(--kt-toolbarButton-foreground);
+      width: 16px;
+      height: 16px;
+      -webkit-mask-size: 16px;
+    }
+
+    &:global(.active) {
+      color: var(--kt-toolbarButton-selectionForeground);
+      background-color: var(--activityBarBadge-background);
+
+      .maskIcon {
+        background: var(--kt-toolbarButton-selectionForeground);
+      }
+    }
+  }
+
+  &:hover {
+    .tabBtn {
+      color: var(--kt-toolbarButton-selectionForeground);
+      background-color: var(--activityBarBadge-background);
+
+      .maskIcon {
+        background: var(--kt-toolbarButton-selectionForeground);
+      }
+    }
+  }
+}
+
+.moreTabItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  padding-bottom: 16px;
+  position: relative;
+}
+
+.topTabWrap {
+  display: flex;
+  height: 52px;
+  padding: 6px 3px 4px 3px;
+  justify-content: space-between;
+  background: var(--kt-menubar-background);
+  user-select: none;
+  -webkit-app-region: drag;
+
+  button,
+  li {
+    -webkit-app-region: no-drag;
+  }
+}
+
+.tabTitle {
+  font-size: 11px;
+  line-height: 18px;
+  width: 50px;
+  text-align: center;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.avatarTitle {
+  font-size: 11px;
+  line-height: 15px;
+  width: 40px;
+  text-align: center;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.avatarItem {
+  margin-left: 5px;
+  margin-right: 0px;
+  -webkit-app-region: no-drag;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  background-size: 24px;
+  border-radius: 50%;
+  margin-top: -1px;
+}
+
+.leftTabWrap {
+  display: flex;
+}
+
+.rightTabWrap {
+  display: flex;
+}
+
+.centerTabWrap {
+  display: flex;
+  :global(.default-button) {
+    &:hover {
+      background-color: var(--activityBarBadge-background) !important;
+    }
+  }
+}
+
+.topTabSetting {
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+:global(#toolbar-location-visible-toolbar-left) {
+  padding: 0 !important;
+}
+
+:global(.kt-toolbar-location .kt-toolbar-action-btn.kt-toolbar-action-btn-vertical .kt-toolbar-action-btn-title) {
+  line-height: 18px;
+}
+
+:global(.kt-toolbar-location .kt-toolbar-location-visible > div) {
+  margin: 0 4px;
+}
+
+.topTabWrap :global(.default-button) {
+  color: var(--kt-toolbarButton-foreground);
+  background-color: var(--kt-toolbarButton-background);
+}

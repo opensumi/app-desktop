@@ -1,5 +1,5 @@
 import { Autowired, Injectable } from '@opensumi/di';
-import { Deferred } from '@opensumi/ide-utils/lib/promise-util';
+import { Deferred } from '@opensumi/ide-utils';
 import { IMetaService, ILoggerService } from 'base/common/types/services';
 import { BaseService } from 'base/common/services/base';
 import { isDev } from 'base/common/utils/env';

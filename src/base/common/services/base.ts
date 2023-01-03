@@ -1,4 +1,4 @@
-import { Deferred } from '@opensumi/ide-utils/lib/promise-util';
+import { Deferred } from '@opensumi/ide-utils';
 
 export abstract class BaseService {
   public readyCompletedDeferred = new Deferred<void>();

@@ -21,7 +21,7 @@ export const HomePage: React.FunctionComponent<RouteComponentProps<WorkspaceRout
 
   useEffect(() => {
     recentService.recentWorkspaces().then((list) => {
-      setWorkspaces(list);
+      setWorkspaces(list.slice(0, 15));
     });
   }, []);
 
@@ -38,7 +38,7 @@ export const HomePage: React.FunctionComponent<RouteComponentProps<WorkspaceRout
           renderItem={(workspace) => (
             <List.Item>
               <Link key={workspace} onClick={() => winService.openEditor(workspace)}>
-                {new URI(workspace).codeUri.fsPath}
+                {new URI(workspace).displayName}
               </Link>
             </List.Item>
           )}

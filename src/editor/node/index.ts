@@ -1,7 +1,6 @@
 import { startServer } from './server';
 
-import { NodeModule, ConstructorOf } from '@opensumi/ide-core-node';
-import { ServerCommonModule } from '@opensumi/ide-core-node';
+import { NodeModule, ConstructorOf, ServerCommonModule } from '@opensumi/ide-core-node';
 import { FileServiceModule } from '@opensumi/ide-file-service/lib/node';
 
 import { ProcessModule } from '@opensumi/ide-process/lib/node';
@@ -14,8 +13,7 @@ import { ExtensionModule } from '@opensumi/ide-extension/lib/node';
 import { FileSchemeNodeModule } from '@opensumi/ide-file-scheme/lib/node';
 import { AddonsModule } from '@opensumi/ide-addons/lib/node';
 import { MiniCodeDesktopNodeModule } from './module';
-
-import { ExtensionManagerModule } from '../extensionManager/node';
+import { OpenVsxExtensionManagerModule } from '@opensumi/ide-extension-manager/lib/node';
 
 export const CommonNodeModules: ConstructorOf<NodeModule>[] = [
   ServerCommonModule,
@@ -26,7 +24,7 @@ export const CommonNodeModules: ConstructorOf<NodeModule>[] = [
   SearchModule,
   TerminalNodePtyModule,
   ExtensionModule,
-  ExtensionManagerModule,
+  OpenVsxExtensionManagerModule,
   FileSchemeNodeModule,
   AddonsModule,
 ];
