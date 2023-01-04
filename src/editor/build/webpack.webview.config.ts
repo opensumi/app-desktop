@@ -40,7 +40,7 @@ const config: Configuration = {
   },
   externals: [
     ({ context, request }, callback) => {
-      if (['node-pty', 'nsfw', 'spdlog', 'electron'].indexOf(request || '') !== -1) {
+      if (['node-pty', '@parcel/watcher', 'spdlog', 'electron'].indexOf(request || '') !== -1) {
         return callback(undefined, `commonjs ${request}`);
       }
       callback();

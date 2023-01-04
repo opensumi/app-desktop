@@ -6,12 +6,13 @@ import { zip } from './zip';
 import { join } from 'path';
 import { argv } from 'yargs';
 import { ensureRm, fsp } from '../src/base/common/utils/fs';
+import { isMac } from '../src/base/common/utils';
 
 // 原生组件的列表和对应的文件名称。
 // key 是包名， value 是编译产物名
 export const nativeNodeNameDict = {
-  'node-pty': 'pty',
-  'nsfw': 'nsfw',
+  'node-pty': isMac ? ['pty.node', 'spawn-helper'] : ['conpty.node', 'pty.node'],
+  '@parcel/watcher': 'watcher.node',
   'spdlog': 'spdlog',
   'keytar': 'keytar',
   'better-sqlite3': 'better_sqlite3',

@@ -1,19 +1,17 @@
-import React from 'react';
-import { useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import {
   Domain,
   ComponentContribution,
   ComponentRegistry,
   EDITOR_COMMANDS,
   SEARCH_COMMANDS,
+  QUICK_OPEN_COMMANDS,
 } from '@opensumi/ide-core-browser';
 import { KeybindingRegistry } from '@opensumi/ide-core-browser/lib/keybinding/keybinding';
 import { useInjectable } from '@opensumi/ide-core-browser/lib/react-hooks';
 import { KeybindingView } from '@opensumi/ide-quick-open/lib/browser/components/keybinding';
-import { QUICK_OPEN_COMMANDS } from '@opensumi/ide-quick-open/lib/common';
-import { localize, registerLocalizationBundle } from '@opensumi/ide-core-common';
+import { localize, registerLocalizationBundle, ThrottledDelayer } from '@opensumi/ide-core-common';
 import { IKeymapService } from '@opensumi/ide-keymaps/lib/common/keymaps';
-import { ThrottledDelayer } from '@opensumi/ide-core-common';
 
 import styles from './editor-empty-component.module.less';
 

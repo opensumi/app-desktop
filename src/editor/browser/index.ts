@@ -53,9 +53,10 @@ import { customLayoutConfig } from './layout';
 import { MiniDesktopModule } from './module';
 import { renderApp } from './app';
 
-import { ExtensionManagerModule } from '../extensionManager/browser';
+import { TopTabModule } from '../modules/top-tab';
+import { OpenVsxExtensionManagerModule } from '@opensumi/ide-extension-manager/lib/browser';
 
-export const CommonBrowserModules: ConstructorOf<BrowserModule>[] = [
+export const commonBrowserModules: ConstructorOf<BrowserModule>[] = [
   MainLayoutModule,
   OverlayModule,
   LogModule,
@@ -91,16 +92,22 @@ export const CommonBrowserModules: ConstructorOf<BrowserModule>[] = [
   KeymapsModule,
   TerminalNextModule,
   ExtensionModule,
-  ExtensionManagerModule,
+  OpenVsxExtensionManagerModule,
   MonacoEnhanceModule,
   ClientAddonModule,
   CommentsModule,
   TaskModule,
   MiniDesktopModule,
+];
+
+const customBrowserModules = [
+  ElectronBasicModule,
+  DemoModule,
+  TopTabModule,
   LocalBasicModule,
 ];
 
 renderApp({
-  modules: [...CommonBrowserModules, ElectronBasicModule, DemoModule],
+  modules: [...commonBrowserModules, ...customBrowserModules],
   layoutConfig: customLayoutConfig,
 });

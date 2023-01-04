@@ -40,7 +40,7 @@ export const config: Configuration = {
   },
   externals: [
     ({ context, request }, callback) => {
-      if (['node-pty', 'nsfw', 'spdlog', '@opensumi/vscode-ripgrep', 'vm2', 'keytar'].indexOf(request || '') !== -1) {
+      if (['node-pty', '@parcel/watcher', 'spdlog', '@opensumi/vscode-ripgrep', 'vm2', 'keytar'].indexOf(request || '') !== -1) {
         return callback(undefined, `commonjs ${request}`);
       }
       callback();

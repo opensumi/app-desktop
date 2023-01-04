@@ -11,13 +11,13 @@
 [cla-url]: https://cla-assistant.io/opensumi/core
 
 </div>
-This project is used to show how custom layout like Mini-App IDE.
+本项目用于展示类小程序 IDE 的布局实现。
 
 ![perview](https://img.alicdn.com/imgextra/i2/O1CN01GWtFj61dYArfmovB9_!!6000000003747-2-tps-2624-1804.png)
 
-English | [简体中文](./README-zh_CN.md)
+[English](./README.md) | 简体中文
 
-## Quick Start
+## 启动
 
 ```bash
 $ git clone git@github.com:opensumi/app-desktop.git
@@ -27,19 +27,19 @@ $ yarn build
 $ yarn start
 ```
 
-## Project Structure
+## 项目结构
 
 ```bash
 src
 ├── base
 ├── bootstrap                     
 ├── editor
-│   ├── build                    # Build configuration
+│   ├── build                    # 构建配置
 │   ├── browser
 │   ├── common
 │   ├── node
-│   ├── modules                  # Custom modules
-│   ├── extension                # The Buit-in extensions
+│   ├── modules                  # 自定义模块存放位置
+│   ├── extension                # 内置插件存放位置
 │   └── main
 ├── pages
 │   ├── dashboard
@@ -47,12 +47,12 @@ src
 └── README.md
 ```
 
-## Start Options
+## 启动配置
 
 - `SUMI_DEBUG=true` allows to display DEBUG level logs.
 - `DEV_TOOLS=true` always open the devtools when app start.
 
-## License
+## 协议
 
 Copyright (c) 2019-present Alibaba Group Holding Limited, Ant Group Co. Ltd.
 

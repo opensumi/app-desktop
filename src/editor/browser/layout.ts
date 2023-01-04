@@ -2,7 +2,7 @@ import { LayoutConfig, SlotLocation } from '@opensumi/ide-core-browser';
 
 export const customLayoutConfig: LayoutConfig = {
   [SlotLocation.top]: {
-    modules: ['@opensumi/ide-menu-bar', 'topbar', 'toolbar'],
+    modules: ['@opensumi/ide-menu-bar', '@opensumi/ide-top-tab'],
   },
   [SlotLocation.action]: {
     modules: ['@opensumi/ide-toolbar-action'],
@@ -11,13 +11,12 @@ export const customLayoutConfig: LayoutConfig = {
     modules: [
       '@opensumi/ide-explorer',
       '@opensumi/ide-search',
-      '@opensumi/ide-scm',
       '@opensumi/ide-extension-manager',
       '@opensumi/ide-debug',
     ],
   },
   [SlotLocation.right]: {
-    modules: [],
+    modules: ['@opensumi/ide-scm'],
   },
   [SlotLocation.main]: {
     modules: ['@opensumi/ide-editor'],

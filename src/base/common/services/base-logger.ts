@@ -1,6 +1,6 @@
 import { Injectable } from '@opensumi/di';
 import { format } from '@opensumi/ide-logs/lib/common';
-import { Deferred } from '@opensumi/ide-utils/lib/promise-util';
+import { Deferred } from '@opensumi/ide-utils';
 import { DebugLog, ILogger, LogLevel } from '@opensumi/ide-core-common/lib/log';
 import { BaseService } from 'base/common/services/base';
 // import
