@@ -7,9 +7,9 @@ import {
   IDialogService,
   IWindowService,
   ILoggerService,
+  IRecentService,
 } from 'base/common/types/services';
 import { IEventService } from './services/event';
-import { IRecentService } from 'editor/common/types';
 
 interface IAppContext {
   injector: Injector | null;
@@ -17,17 +17,19 @@ interface IAppContext {
 
 let baseInjector: Injector | null = null;
 
-export const AppContext = React.createContext({
-  injector: null,
-} as IAppContext);
-
-export function AppProvider({ injector, children }) {
-  return (
-    <AppContext.Provider value={{ injector }}>
-      {children}
-    </AppContext.Provider>
-  );
+interface IAppContext {
+  injector: Injector | null;
 }
+
+export const AppContext = React.createContext<IAppContext>({
+  injector: null,
+});
+
+export const extraContextProvider = (injector: Injector) => ({ children }) => (
+  <AppContext.Provider value={{ injector }}>
+    {children}
+  </AppContext.Provider>
+);
 
 /**
  * 由于 injector 可能在非常早的时候使用，加一个保底

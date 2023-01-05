@@ -95,10 +95,10 @@ export const TopTab = observer(() => {
   };
 
   useEffect(() => {
-    // event.on('full-screen', (event, maximize: boolean) => {
-    //   const style = maximize ? { paddingTop: '8px' } : {};
-    //   setFullScreenStyle(style);
-    // });
+    event.on('full-screen', (event, maximize: boolean) => {
+      const style = maximize ? { paddingTop: '8px' } : {};
+      setFullScreenStyle(style);
+    });
   }, []);
 
   return (

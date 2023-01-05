@@ -10,15 +10,8 @@ import {
   ILoggerService,
   IWindowService,
   IEventService,
-  IMenuService,
 } from 'base/common/types/services';
 import type { WindowProps } from 'base/common/types/app';
-import { IMainApp } from 'base/common/types/app';
-
-interface MeasureInfo {
-  id: string | null;
-  startTime?: number;
-}
 
 @Injectable({ multiple: true })
 export class Window implements IWindow {
@@ -30,14 +23,6 @@ export class Window implements IWindow {
 
   @Autowired(IEventService)
   private eventService: IEventService;
-
-  @Autowired(IMenuService)
-  private menuService: IMenuService;
-
-  @Autowired(IMainApp)
-  private mainApp: IMainApp;
-
-  private measureMap = new Map<string, MeasureInfo>();
 
   public browser: BrowserWindow;
 
@@ -100,6 +85,14 @@ export class Window implements IWindow {
     if (process.env.DEV_TOOLS) {
       this.browser.webContents.openDevTools({ mode: 'detach' });
     }
+
+    this.browser.on('enter-full-screen', () => {
+      this.eventService.emit('full-screen', true, { winId: this.id });
+    });
+
+    this.browser.on('leave-full-screen', () => {
+      this.eventService.emit('full-screen', false, { winId: this.id });
+    });
   }
 
   configBrowserWindowOptions(

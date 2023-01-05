@@ -6,6 +6,8 @@ import { MetaService } from './meta';
 import { EventService } from './event';
 import { MenuService } from './menu';
 import { ShellService } from './shell';
+import { MainStorageService } from './storage';
+import { RecentService } from './recent';
 
 import {
   ILoggerService,
@@ -16,10 +18,9 @@ import {
   IEventService,
   IMenuService,
   IShellService,
+  IMainStorageService,
+  IRecentService,
 } from 'base/common/types/services';
-import { IMainStorageService, IRecentService } from 'editor/common/types';
-import { RecentService } from 'editor/main/services/recent';
-import { MainStorageService } from 'editor/main/services/storage';
 
 export const serviceProviders = [
   { token: ILoggerService, useClass: LoggerService },

@@ -1,15 +1,10 @@
 import os from 'os';
-import { Injector, Injectable, Autowired, INJECTOR_TOKEN } from '@opensumi/di';
+import fse, { ensureDir, ensureDirSync } from 'fs-extra';
+import { Injectable } from '@opensumi/di';
 import { URI } from '@opensumi/ide-utils/lib/uri';
 import { Emitter, Event } from '@opensumi/ide-utils/lib/event';
-import fse, { ensureDir, ensureDirSync } from 'fs-extra';
-import { IMainStorageService } from '../../common/types';
-import { Constants } from '../../common/constants';
-import { Domain } from '@opensumi/ide-core-common';
-import {
-  ElectronMainApiRegistry,
-  ElectronMainContribution,
-} from '@opensumi/ide-core-electron-main/lib/bootstrap/types';
+import { Constants } from 'editor/common/constants';
+import { IMainStorageService } from 'base/common/types/services';
 
 export interface StorageChange {
   path: string;
@@ -146,15 +141,5 @@ export class MainStorageService implements IMainStorageService {
       data: value,
     };
     this.onDidChangeEmitter.fire(change);
-  }
-}
-
-@Domain(ElectronMainContribution)
-export class MainStorageContribution implements ElectronMainContribution {
-  @Autowired(INJECTOR_TOKEN)
-  injector: Injector;
-
-  registerMainApi(registry: ElectronMainApiRegistry) {
-    registry.registerMainApi(IMainStorageService, this.injector.get(IMainStorageService));
   }
 }

@@ -31,10 +31,8 @@ eventService.on('metadata', (e, metadata) => {
   }
 });
 
-
 /**
  * 所有窗口启动的基础服务
- * @param options BootstrapOptions
  */
 export async function bootstrap() {
   return { injector };

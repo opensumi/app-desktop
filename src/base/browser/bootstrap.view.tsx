@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppProvider, setBaseInjector } from 'base/browser/AppContext';
+import { AppContext, setBaseInjector } from 'base/browser/AppContext';
 import { bootstrap } from 'base/browser/bootstrap';
 
 interface PageRenderOptions {
@@ -11,9 +11,9 @@ export const pageRender = async (app: JSX.Element, options?: PageRenderOptions) 
   const { injector } = await bootstrap();
   setBaseInjector(injector);
   const innerApp = (
-    <AppProvider injector={injector}>
+    <AppContext.Provider value={{ injector }}>
       {app}
-    </AppProvider>);
+    </AppContext.Provider>);
 
   const innerDom = options?.dom || document.getElementById('main')!;
   return new Promise<void>((resolve) => {

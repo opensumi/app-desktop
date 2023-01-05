@@ -2,7 +2,7 @@ import { Autowired } from '@opensumi/di';
 import { ClientAppContribution } from '@opensumi/ide-core-browser/lib/common';
 import { Domain, IEventBus, ThrottledDelayer } from '@opensumi/ide-core-common';
 import { ThemeChangedEvent } from '@opensumi/ide-theme/lib/common';
-import { IMainStorageService } from 'editor/common/types';
+import { IMainStorageService } from 'base/common/types/services';
 
 export interface ThemeData {
   menuBarBackground?: string;

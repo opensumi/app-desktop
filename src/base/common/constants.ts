@@ -1,5 +1,4 @@
 import { isMacintosh, isLinux } from '@opensumi/ide-utils/lib/platform';
-import { IMainStorageService, IRecentService } from '../../editor/common/types';
 import type { WindowProps } from './types/app';
 import { IMainApp } from './types/app';
 import {
@@ -8,6 +7,9 @@ import {
   IDialogService,
   IMetaService,
   IMenuService,
+  IMainStorageService,
+  IRecentService,
+  IEventService,
 } from './types/services';
 
 export const APP_NAME = 'app-desktop';
