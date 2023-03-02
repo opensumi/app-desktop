@@ -1,4 +1,5 @@
-import { ClientApp, IClientAppOpts, electronEnv, URI } from '@opensumi/ide-core-browser';
+import { IClientAppOpts, electronEnv, URI } from '@opensumi/ide-core-browser';
+import { ClientApp } from '@opensumi/ide-core-browser/lib/bootstrap/app';
 import { createSocketConnection } from '@opensumi/ide-connection/lib/node';
 import { IElectronMainLifeCycleService } from '@opensumi/ide-core-common/lib/electron';
 import { extraContextProvider } from 'base/browser/AppContext';

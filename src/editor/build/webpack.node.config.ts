@@ -39,6 +39,9 @@ export const config: Configuration = {
     }],
   },
   externals: [
+    {
+      nsfw: 'nsfw',
+    },
     ({ context, request }, callback) => {
       if (['node-pty', '@parcel/watcher', 'spdlog', '@opensumi/vscode-ripgrep', 'vm2', 'keytar'].indexOf(request || '') !== -1) {
         return callback(undefined, `commonjs ${request}`);
