@@ -39,6 +39,9 @@ const nodeTarget: Configuration = {
     ],
   },
   externals: [
+    {
+      nsfw: 'nsfw',
+    },
     ({ context, request }, callback) => {
       if (['node-pty', '@parcel/watcher', 'spdlog', 'keytar'].indexOf(request || '') !== -1) {
         return callback(undefined, `commonjs ${request}`);
@@ -93,6 +96,9 @@ const workerTarget: Configuration = {
     ],
   },
   externals: [
+    {
+      nsfw: 'nsfw',
+    },
     ({ context, request }, callback) => {
       if (['node-pty', '@parcel/watcher', 'spdlog', 'keytar'].indexOf(request || '') !== -1) {
         return callback(undefined, `commonjs ${request}`);

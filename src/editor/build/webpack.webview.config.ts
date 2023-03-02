@@ -39,6 +39,9 @@ const config: Configuration = {
     ],
   },
   externals: [
+    {
+      nsfw: 'nsfw',
+    },
     ({ context, request }, callback) => {
       if (['node-pty', '@parcel/watcher', 'spdlog', 'electron'].indexOf(request || '') !== -1) {
         return callback(undefined, `commonjs ${request}`);
